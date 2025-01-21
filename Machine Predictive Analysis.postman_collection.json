@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "58aba657-675d-477d-b3f1-e4c00b0e5cf5",
+		"name": "Machine Predictive Analysis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29998198"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8000/upload",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "postman-cloud:///1efd7c79-7097-4d60-bc22-7f615a5a9525"
+						}
+					]
+				},
+				"url": "http://localhost:8000/upload"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/train",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:8000/train"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/predict",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"air_temperature\": 300.0,\r\n    \"process_temperature\": 310.0,\r\n    \"rotational_speed\": 1300,\r\n    \"torque\": 100.0,\r\n    \"tool_wear\": 100,\r\n    \"product_quality\": \"L\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/predict"
+			},
+			"response": []
+		}
+	]
+}
